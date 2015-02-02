@@ -11,9 +11,19 @@
 		3060E6A5196A59CD007FA30D /* NSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060E6A2196A59CD007FA30D /* NSImage.swift */; };
 		3060E6A6196A59CD007FA30D /* RSPerceptualHashAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060E6A3196A59CD007FA30D /* RSPerceptualHashAlgorithm.swift */; };
 		3060E6A7196A59CD007FA30D /* RSTargetGen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060E6A4196A59CD007FA30D /* RSTargetGen.swift */; };
-		30BC107B196A5A9D00777B1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BC107A196A5A9D00777B1B /* main.m */; };
+		30BC107B196A5A9D00777B1B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BC107A196A5A9D00777B1B /* main.swift */; };
 		30BC107F196A5AB800777B1B /* RSPerceptualHashAlgorithm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3060E686196A59AB007FA30D /* RSPerceptualHashAlgorithm.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3039CD5719742AB9000748F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3060E67D196A59AB007FA30D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3060E685196A59AB007FA30D;
+			remoteInfo = RSPerceptualHashAlgorithm;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		30BC1076196A5A9D00777B1B /* CopyFiles */ = {
@@ -35,7 +45,7 @@
 		3060E6A3196A59CD007FA30D /* RSPerceptualHashAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSPerceptualHashAlgorithm.swift; sourceTree = "<group>"; };
 		3060E6A4196A59CD007FA30D /* RSTargetGen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSTargetGen.swift; sourceTree = "<group>"; };
 		30BC1078196A5A9D00777B1B /* PHA-Loader */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "PHA-Loader"; sourceTree = BUILT_PRODUCTS_DIR; };
-		30BC107A196A5A9D00777B1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		30BC107A196A5A9D00777B1B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +108,7 @@
 		30BC1079196A5A9D00777B1B /* PHA-Loader */ = {
 			isa = PBXGroup;
 			children = (
-				30BC107A196A5A9D00777B1B /* main.m */,
+				30BC107A196A5A9D00777B1B /* main.swift */,
 			);
 			path = "PHA-Loader";
 			sourceTree = "<group>";
@@ -125,6 +135,7 @@
 				3060E682196A59AB007FA30D /* Frameworks */,
 				3060E683196A59AB007FA30D /* Headers */,
 				3060E684196A59AB007FA30D /* Resources */,
+				3039CD5919742ADB000748F7 /* Install */,
 			);
 			buildRules = (
 			);
@@ -146,6 +157,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3039CD5819742AB9000748F7 /* PBXTargetDependency */,
 			);
 			name = "PHA-Loader";
 			productName = "PHA-Loader";
@@ -197,6 +209,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3039CD5919742ADB000748F7 /* Install */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Install;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd ${TARGET_BUILD_DIR}/\nrm -rf ~/Library/Frameworks/RSPerceptualHashAlgorithm.framework\ncp -a RSPerceptualHashAlgorithm.framework ~/Library/Frameworks/RSPerceptualHashAlgorithm.framework";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3060E681196A59AB007FA30D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -212,11 +241,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30BC107B196A5A9D00777B1B /* main.m in Sources */,
+				30BC107B196A5A9D00777B1B /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3039CD5819742AB9000748F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3060E685196A59AB007FA30D /* RSPerceptualHashAlgorithm */;
+			targetProxy = 3039CD5719742AB9000748F7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3060E69A196A59AB007FA30D /* Debug */ = {
